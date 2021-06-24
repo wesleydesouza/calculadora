@@ -100,13 +100,14 @@ function incluirPonto(){
 function obterPorcento(){
     if(!numero2){
         limpar();
-    }
-    if(!numero2){
-        numero2 = "";
-        mostrarNoDisplay(numero1)
-    }else{
-    var porcento = numero1*numero2/100;
-    numero2 = porcento;
-    mostrarNoDisplay(numero2);
+        mostrarNoDisplay(numero1);
+    }else {
+        if(operacao === "+" || operacao === "-"){
+            var porcento = numero1 * numero2 / 100;    
+        } else {
+            var porcento = numero2 / 100;
+        }
+        numero2 = porcento;
+        mostrarNoDisplay(numero2);
     }
 }
